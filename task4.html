@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoverable Sidebar Buttons</title>
+    <style>
+        /* Sidebar Styles */
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: green; /* First hover is green */
+        }
+
+        .sidebar a:nth-child(2):hover {
+            background-color: blue; /* Second hover is blue */
+        }
+
+        .sidebar a:nth-child(3):hover {
+            background-color: red; /* Third hover is red */
+        }
+
+        .sidebar a:nth-child(4):hover {
+            background-color: brown; /* Fourth hover is brown */
+        }
+
+        /* Button to open the sidebar */
+        .openbtn {
+            position: absolute;
+            padding: 10px 15px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            left: 0;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
+        }
+
+        /* Content Styles */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <a href="#">Button 1</a>
+        <a href="#">Button 2</a>
+        <a href="#">Button 3</a>
+        <a href="#">Button 4</a>
+    </div>
+
+    <button class="openbtn" onclick="toggleSidebar()">☰ Open Sidebar</button>
+
+    <div class="content">
+        <h1>Main Content</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend dolor non dolor luctus, eu fermentum ex venenatis.</p>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.left === '-250px') {
+                sidebar.style.left = '0';
+            } else {
+                sidebar.style.left = '-250px';
+            }
+        }
+    </script>
+</body>
+</html>
